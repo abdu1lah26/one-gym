@@ -1,6 +1,7 @@
 "use client";
 
 import Header from "@/components/Header";
+import Image from "next/image";
 import Link from "next/link";
 import {
   Award,
@@ -377,7 +378,17 @@ export default function AboutPage() {
                 fontWeight: 500,
               }}
             >
-              Gym Image Placeholder
+              <Image
+                src="/logo.jpg"
+                alt="Gym Logo"
+                width={300}
+                height={300}
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  maxWidth: "300px",
+                }}
+              />
             </div>
           </div>
         </section>
