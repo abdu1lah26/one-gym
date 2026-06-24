@@ -86,7 +86,7 @@ export default function Preloader() {
           { x: windowSize.width, duration: 1.2, ease: "power4.inOut" },
           "split"
         )
-        .call(signalDone, null, 3.0);
+        .call(signalDone, [], 3.0);
     }, containerRef);
 
     return () => ctx.revert();
