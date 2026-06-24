@@ -23,7 +23,7 @@ export default function TrainersPage() {
     },
     {
       id: 2,
-      name: "Arjun Kumar",
+      name: "Jawed Nawab",
       type: "Male Trainer",
       image: "/male-trainer.jpg",
       experience: "7+ Years",
