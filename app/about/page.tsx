@@ -138,184 +138,397 @@ export default function AboutPage() {
     },
   ];
 
-  // Responsive styles helper
   const getResponsiveStyles = () => `
+    * {
+      box-sizing: border-box;
+    }
+
+    /* Desktop Styles (1024px and above) */
+    .hero-title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 500;
+      color: #d4af37;
+      margin: 0 0 20px;
+    }
+
+    .hero-logo {
+      height: clamp(40px, 6vw, 70px);
+      width: auto;
+      display: block;
+    }
+
+    .hero-description {
+      font-size: clamp(16px, 2vw, 18px);
+      color: #f5f5f5;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .section-title {
+      font-size: clamp(28px, 5vw, 40px);
+      font-weight: 500;
+      color: #D4AF37;
+    }
+
+    .why-choose-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .facilities-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .cta-button {
+      width: auto;
+    }
+
+    /* Tablet Styles (768px - 1023px) */
     @media (max-width: 1024px) {
-      .hero-title {
-        font-size: 40px !important;
+      .hero-section {
+        padding: 60px 24px !important;
       }
-      .section-title {
-        font-size: 32px !important;
-      }
+
       .section-padding {
         padding: 60px 24px !important;
       }
+
+      .hero-title {
+        gap: 8px;
+        font-size: 36px !important;
+      }
+
+      .section-title {
+        font-size: 32px !important;
+        margin-bottom: 40px !important;
+      }
+
+      .hero-description {
+        font-size: 16px !important;
+      }
+
       .story-grid {
         grid-template-columns: 1fr !important;
+        gap: 30px !important;
       }
+
       .story-image {
         height: 300px !important;
       }
-    }
 
-    @media (max-width: 768px) {
-  .why-choose-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-}
-
-@media (max-width: 480px) {
-  .why-choose-grid {
-    grid-template-columns: 1fr !important;
-  }
-}
-
-    @media (max-width: 768px) {
-      .hero-title {
-        font-size: 32px !important;
-      }
-      .section-title {
-        font-size: 26px !important;
-      }
-      .section-padding {
-        padding: 40px 16px !important;
-      }
-      .story-text p {
-        font-size: 15px !important;
-      }
-      .values-grid {
-        grid-template-columns: 1fr !important;
-      }
       .why-choose-grid {
-        grid-template-columns: 1fr !important;
-      }
-      .facilities-grid {
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 20px !important;
       }
+
+      .why-choose-card {
+        padding: 24px !important;
+      }
+
+      .why-choose-card h3 {
+        font-size: 20px !important;
+      }
+
+      .why-choose-card p {
+        font-size: 14px !important;
+      }
+
+      .facilities-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 24px !important;
+      }
+
       .facility-card {
-        height: 220px !important;
+        height: 280px !important;
       }
-      .cta-buttons {
-        flex-direction: column !important;
-      }
-      .cta-button {
-        width: 100% !important;
+
+      .ready-section {
+        padding: 60px 24px !important;
       }
     }
 
-    @media (max-width: 480px) {
+    /* Mobile Tablet Styles (481px - 767px) */
+    @media (max-width: 768px) {
       .hero-section {
-        padding: 50px 16px !important;
+        padding: 40px 16px !important;
       }
+
+      .section-padding {
+        padding: 40px 16px !important;
+      }
+
       .hero-title {
-        font-size: 26px !important;
-        margin-bottom: 15px !important;
+        gap: 6px;
+        font-size: 28px !important;
+        margin-bottom: 12px !important;
       }
+
+      .hero-logo {
+        height: 36px !important;
+      }
+
       .hero-description {
         font-size: 15px !important;
       }
+
       .section-title {
-        font-size: 22px !important;
-        margin-bottom: 40px !important;
+        font-size: 28px !important;
+        margin-bottom: 30px !important;
       }
-      .section-padding {
-        padding: 30px 16px !important;
+
+      .story-grid {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
       }
+
+      .story-image {
+        height: 250px !important;
+        margin-top: 20px !important;
+      }
+
       .story-text p {
-        font-size: 14px !important;
+        font-size: 15px !important;
         margin-bottom: 15px !important;
       }
-      .value-card {
-        padding: 20px !important;
+
+      .why-choose-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 16px !important;
       }
-      .value-card h3 {
-        font-size: 18px !important;
-      }
-      .value-card p {
-        font-size: 13px !important;
-      }
+
       .why-choose-card {
         padding: 20px !important;
       }
+
       .why-choose-card h3 {
         font-size: 18px !important;
       }
+
       .why-choose-card p {
         font-size: 13px !important;
+        line-height: 1.6 !important;
       }
+
       .icon-circle {
         width: 56px !important;
         height: 56px !important;
         margin-bottom: 12px !important;
       }
+
       .icon-circle svg {
         width: 24px !important;
         height: 24px !important;
       }
+
       .facilities-grid {
-        grid-template-columns: 1fr !important;
+        grid-template-columns: repeat(2, 1fr) !important;
         gap: 16px !important;
       }
+
       .facility-card {
-        height: 250px !important;
+        height: 240px !important;
       }
+
       .facility-name {
         font-size: 14px !important;
       }
+
       .ready-section {
         padding: 40px 16px !important;
       }
+
       .cta-buttons {
         flex-direction: column !important;
         gap: 12px !important;
       }
+
       .cta-button {
         width: 100% !important;
         padding: 12px 24px !important;
+        font-size: 14px !important;
+      }
+
+      .section-padding {
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+      }
+    }
+
+    /* Mobile Styles (320px - 480px) */
+    @media (max-width: 480px) {
+      .hero-section {
+        padding: 40px 12px !important;
+      }
+
+      .section-padding {
+        padding: 30px 12px !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+      }
+
+      .hero-title {
+        gap: 4px;
+        font-size: 22px !important;
+        margin-bottom: 12px !important;
+      }
+
+      .hero-logo {
+        height: 28px !important;
+      }
+
+      .hero-description {
+        font-size: 14px !important;
+        line-height: 1.6 !important;
+      }
+
+      .section-title {
+        font-size: 24px !important;
+        margin-bottom: 24px !important;
+      }
+
+      .story-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+      }
+
+      .story-text p {
+        font-size: 14px !important;
+        margin-bottom: 12px !important;
+        line-height: 1.6 !important;
+      }
+
+      .story-image {
+        height: 200px !important;
+      }
+
+      .value-card {
+        padding: 16px !important;
+      }
+
+      .value-card h3 {
+        font-size: 16px !important;
+      }
+
+      .value-card p {
+        font-size: 12px !important;
+      }
+
+      .why-choose-grid {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+      }
+
+      .why-choose-card {
+        padding: 16px !important;
+      }
+
+      .why-choose-card h3 {
+        font-size: 16px !important;
+        margin-bottom: 8px !important;
+      }
+
+      .why-choose-card p {
+        font-size: 12px !important;
+        line-height: 1.5 !important;
+      }
+
+      .icon-circle {
+        width: 48px !important;
+        height: 48px !important;
+        margin-bottom: 10px !important;
+      }
+
+      .icon-circle svg {
+        width: 20px !important;
+        height: 20px !important;
+      }
+
+      .facilities-grid {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+      }
+
+      .facility-card {
+        height: 200px !important;
+      }
+
+      .facility-name {
+        font-size: 13px !important;
+        padding: 16px !important;
+      }
+
+      .ready-section {
+        padding: 30px 12px !important;
+      }
+
+      .cta-buttons {
+        flex-direction: column !important;
+        gap: 10px !important;
+      }
+
+      .cta-button {
+        width: 100% !important;
+        padding: 12px 20px !important;
+        font-size: 13px !important;
+      }
+
+      .story-text button {
+        width: 100% !important;
+        padding: 12px 20px !important;
         font-size: 13px !important;
       }
     }
+
+    /* Extra Small Mobile (< 320px) */
+    @media (max-width: 320px) {
       .hero-title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
+        font-size: 20px !important;
+      }
 
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: 500;
-  color: #d4af37;
+      .section-title {
+        font-size: 20px !important;
+      }
 
-  margin: 0 0 20px;
-}
+      .hero-description {
+        font-size: 13px !important;
+      }
 
-.hero-logo {
-  height: clamp(40px, 6vw, 70px);
-  width: auto;
-  display: block;
-}
+      .story-text p {
+        font-size: 13px !important;
+      }
 
-.hero-description {
-  font-size: 18px;
-  color: #f5f5f5;
-  max-width: 700px;
-  margin: 0 auto;
-  line-height: 1.7;
-}
+      .why-choose-card h3 {
+        font-size: 14px !important;
+      }
 
-@media (max-width: 480px) {
-  .hero-title {
-    gap: 6px;
-  }
-
-  .hero-logo {
-    height: 32px;
-  }
-
-  .hero-description {
-    font-size: 15px;
-  }
-}
+      .why-choose-card p {
+        font-size: 11px !important;
+      }
+    }
   `;
 
   return (
@@ -335,7 +548,6 @@ export default function AboutPage() {
         >
           <h1 className="hero-title">
             <span>About</span>
-
             <img
               src="/logo-text-Photoroom.png"
               alt="ONE GYM"
@@ -354,7 +566,7 @@ export default function AboutPage() {
           className="section-padding"
           style={{
             padding: "80px 40px",
-            maxWidth: "1000px",
+            maxWidth: "100%",
             marginLeft: "auto",
             marginRight: "auto",
           }}
@@ -362,9 +574,6 @@ export default function AboutPage() {
           <h2
             className="section-title"
             style={{
-              fontSize: "40px",
-              fontWeight: 500,
-              color: "#D4AF37",
               margin: "0 0 30px 0",
               textAlign: "center",
             }}
@@ -379,6 +588,9 @@ export default function AboutPage() {
               gridTemplateColumns: "1fr 1fr",
               gap: "40px",
               alignItems: "center",
+              maxWidth: "1000px",
+              marginLeft: "auto",
+              marginRight: "auto",
             }}
           >
             <div className="story-text">
@@ -433,6 +645,16 @@ export default function AboutPage() {
                     borderRadius: "8px",
                     cursor: "pointer",
                     transition: "all 0.3s ease",
+                    width: "auto",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = "scale(1.05)";
+                    e.currentTarget.style.boxShadow =
+                      "0 5px 15px rgba(212,175,55,0.3)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = "scale(1)";
+                    e.currentTarget.style.boxShadow = "none";
                   }}
                 >
                   Start Your Journey
@@ -451,7 +673,7 @@ export default function AboutPage() {
                 justifyContent: "center",
                 fontSize: "18px",
                 color: "#000000",
-                fontWeight: 500,
+                fontWeight: 500
               }}
             >
               <Image
@@ -486,9 +708,6 @@ export default function AboutPage() {
             <h2
               className="section-title"
               style={{
-                fontSize: "40px",
-                fontWeight: 500,
-                color: "#D4AF37",
                 textAlign: "center",
                 marginBottom: "16px",
               }}
@@ -533,8 +752,6 @@ export default function AboutPage() {
                       padding: "30px",
                       transition: "0.3s ease",
                       cursor: "pointer",
-
-                      // Center the last card
                       ...(index === whyChooseOneGym.length - 1 && {
                         gridColumn: "2 / 3",
                       }),
@@ -614,9 +831,6 @@ export default function AboutPage() {
             <h2
               className="section-title"
               style={{
-                fontSize: "40px",
-                fontWeight: 500,
-                color: "#D4AF37",
                 margin: "0 0 60px 0",
                 textAlign: "center",
               }}
@@ -645,6 +859,19 @@ export default function AboutPage() {
                     transition: "all 0.3s ease",
                     cursor: "pointer",
                   }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.border =
+                      "1px solid rgba(212,175,55,0.8)";
+                    e.currentTarget.style.transform = "scale(1.02)";
+                    e.currentTarget.style.boxShadow =
+                      "0 10px 30px rgba(212,175,55,0.15)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.border =
+                      "1px solid rgba(212, 175, 55, 0.2)";
+                    e.currentTarget.style.transform = "scale(1)";
+                    e.currentTarget.style.boxShadow = "none";
+                  }}
                 >
                   <img
                     src={facility.image}
@@ -659,26 +886,6 @@ export default function AboutPage() {
                       e.currentTarget.style.display = "none";
                     }}
                   />
-
-                  <div
-                    style={{
-                      position: "absolute",
-                      top: 0,
-                      left: 0,
-                      width: "100%",
-                      height: "100%",
-                      background:
-                        "linear-gradient(135deg, #D4AF37 0%, #1A1A1A 100%)",
-                      display: "none",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      fontSize: "14px",
-                      color: "#000000",
-                      fontWeight: 500,
-                    }}
-                  >
-                    {facility.name}
-                  </div>
 
                   <div
                     style={{
@@ -718,79 +925,95 @@ export default function AboutPage() {
           style={{
             padding: "80px 40px",
             textAlign: "center",
-            maxWidth: "800px",
+            maxWidth: "100%",
             marginLeft: "auto",
             marginRight: "auto",
           }}
         >
-          <h2
-            className="section-title"
-            style={{
-              fontSize: "40px",
-              fontWeight: 500,
-              color: "#D4AF37",
-              margin: "0 0 20px 0",
-            }}
-          >
-            Ready to Transform?
-          </h2>
-          <p
-            style={{
-              fontSize: "16px",
-              color: "#F5F5F5",
-              margin: "0 0 40px 0",
-              lineHeight: "1.7",
-            }}
-          >
-            Join our community and start your fitness journey today. Choose the
-            plan that works for you and get started with expert guidance.
-          </p>
+          <div style={{ maxWidth: "800px", marginLeft: "auto", marginRight: "auto" }}>
+            <h2
+              className="section-title"
+              style={{
+                margin: "0 0 20px 0",
+              }}
+            >
+              Ready to Transform?
+            </h2>
+            <p
+              style={{
+                fontSize: "16px",
+                color: "#F5F5F5",
+                margin: "0 0 40px 0",
+                lineHeight: "1.7",
+              }}
+            >
+              Join our community and start your fitness journey today. Choose the
+              plan that works for you and get started with expert guidance.
+            </p>
 
-          <div
-            className="cta-buttons"
-            style={{
-              display: "flex",
-              gap: "20px",
-              justifyContent: "center",
-            }}
-          >
-            <Link href="/membership">
-              <button
-                className="cta-button"
-                style={{
-                  background: "#D4AF37",
-                  color: "#000000",
-                  padding: "14px 40px",
-                  fontSize: "14px",
-                  fontWeight: 500,
-                  border: "none",
-                  borderRadius: "8px",
-                  cursor: "pointer",
-                  transition: "all 0.3s ease",
-                }}
-              >
-                View Plans
-              </button>
-            </Link>
+            <div
+              className="cta-buttons"
+              style={{
+                display: "flex",
+                gap: "20px",
+                justifyContent: "center",
+              }}
+            >
+              <Link href="/membership">
+                <button
+                  className="cta-button"
+                  style={{
+                    background: "#D4AF37",
+                    color: "#000000",
+                    padding: "14px 40px",
+                    fontSize: "14px",
+                    fontWeight: 500,
+                    border: "none",
+                    borderRadius: "8px",
+                    cursor: "pointer",
+                    transition: "all 0.3s ease",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = "scale(1.05)";
+                    e.currentTarget.style.boxShadow =
+                      "0 5px 15px rgba(212,175,55,0.3)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = "scale(1)";
+                    e.currentTarget.style.boxShadow = "none";
+                  }}
+                >
+                  View Plans
+                </button>
+              </Link>
 
-            <Link href="/contact">
-              <button
-                className="cta-button"
-                style={{
-                  background: "transparent",
-                  color: "#D4AF37",
-                  padding: "14px 40px",
-                  fontSize: "14px",
-                  fontWeight: 500,
-                  border: "2px solid #D4AF37",
-                  borderRadius: "8px",
-                  cursor: "pointer",
-                  transition: "all 0.3s ease",
-                }}
-              >
-                Get In Touch
-              </button>
-            </Link>
+              <Link href="/contact">
+                <button
+                  className="cta-button"
+                  style={{
+                    background: "transparent",
+                    color: "#D4AF37",
+                    padding: "14px 40px",
+                    fontSize: "14px",
+                    fontWeight: 500,
+                    border: "2px solid #D4AF37",
+                    borderRadius: "8px",
+                    cursor: "pointer",
+                    transition: "all 0.3s ease",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = "#D4AF37";
+                    e.currentTarget.style.color = "#000000";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = "transparent";
+                    e.currentTarget.style.color = "#D4AF37";
+                  }}
+                >
+                  Get In Touch
+                </button>
+              </Link>
+            </div>
           </div>
         </section>
       </div>
