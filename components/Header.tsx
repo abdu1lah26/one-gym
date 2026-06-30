@@ -2,10 +2,12 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   const navLinks = [
     { name: "Home", href: "/" },
@@ -64,27 +66,39 @@ export default function Header() {
             gap: "32px",
           }}
         >
-          {navLinks.map((link) => (
-            <Link key={link.name} href={link.href}>
-              <span
-                style={{
-                  color: "#F5F5F5",
-                  fontSize: "14px",
-                  fontWeight: 500,
-                  cursor: "pointer",
-                  transition: "color 0.3s ease",
-                }}
-                onMouseEnter={(e) =>
-                  (e.currentTarget.style.color = "#D4AF37")
-                }
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.color = "#F5F5F5")
-                }
-              >
-                {link.name}
-              </span>
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href;
+
+            return (
+              <Link key={link.name} href={link.href}>
+                <span
+                  style={{
+                    color: isActive ? "#D4AF37" : "#F5F5F5",
+                    fontSize: "14px",
+                    fontWeight: isActive ? 700 : 500,
+                    cursor: "pointer",
+                    transition: "all 0.3s ease",
+                    borderBottom: isActive
+                      ? "2px solid #D4AF37"
+                      : "2px solid transparent",
+                    paddingBottom: "4px",
+                  }}
+                  onMouseEnter={(e) => {
+                    if (!isActive) {
+                      e.currentTarget.style.color = "#D4AF37";
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    if (!isActive) {
+                      e.currentTarget.style.color = "#F5F5F5";
+                    }
+                  }}
+                >
+                  {link.name}
+                </span>
+              </Link>
+            );
+          })}
 
           <Link href="/membership">
             <button
@@ -133,23 +147,27 @@ export default function Header() {
             gap: "18px",
           }}
         >
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              <span
-                style={{
-                  color: "#F5F5F5",
-                  fontSize: "16px",
-                  display: "block",
-                }}
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href;
+
+            return (
+              <Link
+                key={link.name}
+                href={link.href}
+                onClick={() => setMobileMenuOpen(false)}
               >
-                {link.name}
-              </span>
-            </Link>
-          ))}
+                <span
+                  style={{
+                    color: isActive ? "#D4AF37" : "#F5F5F5",
+                    fontSize: "16px",
+                    fontWeight: isActive ? 700 : 500,
+                  }}
+                >
+                  {link.name}
+                </span>
+              </Link>
+            );
+          })}
 
           <Link
             href="/membership"

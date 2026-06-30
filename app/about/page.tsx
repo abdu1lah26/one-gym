@@ -4,14 +4,15 @@ import Header from "@/components/Header";
 import Image from "next/image";
 import Link from "next/link";
 import {
-  Award,
+  Dumbbell,
+  HeartPulse,
+  Swords,
+  Coffee,
   Building2,
   Users,
-  Target,
-  Dumbbell,
-  ShieldCheck,
-  Medal,
-  Sparkles,
+  Star,
+  Trophy,
+  UserCheck,
 } from "lucide-react";
 
 export default function AboutPage() {
@@ -40,7 +41,7 @@ export default function AboutPage() {
 
   const whyChooseUs = [
     {
-      icon: Award,
+      icon: Trophy,
       title: "Expert Trainers",
       description:
         "30+ years of combined experience with certified trainers specialized in all fitness disciplines.",
@@ -58,7 +59,7 @@ export default function AboutPage() {
         "Supportive gym environment with specialized café and unmatched member camaraderie.",
     },
     {
-      icon: Target,
+      icon: Coffee,
       title: "Personalized Approach",
       description:
         "Custom training programs tailored to your specific goals, fitness level, and preferences.",
@@ -72,6 +73,69 @@ export default function AboutPage() {
     { id: 4, name: "Olympic Lifting", image: "/gym4.jpg" },
     { id: 5, name: "Flexibility & Recovery", image: "/gym5.jpg" },
     { id: 6, name: "Member Lounge", image: "/gym6.jpg" },
+  ];
+
+  const whyChooseOneGym = [
+    {
+      icon: Trophy,
+      title: "CrossFit Training",
+      description:
+        "High-intensity functional workouts that build strength, endurance, and athletic performance.",
+    },
+    {
+      icon: Swords,
+      title: "MMA Training",
+      description:
+        "Professional MMA coaching focused on technique, self-defense, and total body conditioning.",
+    },
+    {
+      icon: HeartPulse,
+      title: "Cardio & Fat Loss",
+      description:
+        "Customized cardio and fat-loss programs designed to help you achieve sustainable results.",
+    },
+    {
+      icon: Dumbbell,
+      title: "Modern Equipment",
+      description:
+        "Train with premium machines and free weights for every fitness goal.",
+    },
+    {
+      icon: Dumbbell,
+      title: "Strength Training",
+      description:
+        "Dedicated strength zone for muscle building, powerlifting, and progressive overload.",
+    },
+    {
+      icon: UserCheck,
+      title: "Expert Trainers",
+      description:
+        "Experienced male and female trainers providing personalized guidance and motivation.",
+    },
+    {
+      icon: Coffee,
+      title: "ONE Café",
+      description:
+        "Recharge with protein shakes, healthy meals, coffee, and nutritious refreshments.",
+    },
+    {
+      icon: Building2,
+      title: "Spacious Gym",
+      description:
+        "A large, well-ventilated training space that never feels overcrowded.",
+    },
+    {
+      icon: Users,
+      title: "Unisex Gym",
+      description:
+        "A comfortable, safe, and welcoming environment for both men and women.",
+    },
+    {
+      icon: Star,
+      title: "Celebrity Trusted",
+      description:
+        "Trusted by celebrities and professional personalities for elite fitness training.",
+    },
   ];
 
   // Responsive styles helper
@@ -93,6 +157,18 @@ export default function AboutPage() {
         height: 300px !important;
       }
     }
+
+    @media (max-width: 768px) {
+  .why-choose-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .why-choose-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
 
     @media (max-width: 768px) {
       .hero-title {
@@ -393,19 +469,18 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Core Values Section */}
+        {/* Why Choose ONE GYM */}
         <section
           className="section-padding"
           style={{
             padding: "80px 40px",
-            background: "#1A1A1A",
+            background: "#111111",
           }}
         >
           <div
             style={{
-              maxWidth: "1000px",
-              marginLeft: "auto",
-              marginRight: "auto",
+              maxWidth: "1200px",
+              margin: "0 auto",
             }}
           >
             <h2
@@ -414,145 +489,110 @@ export default function AboutPage() {
                 fontSize: "40px",
                 fontWeight: 500,
                 color: "#D4AF37",
-                margin: "0 0 60px 0",
                 textAlign: "center",
+                marginBottom: "16px",
               }}
             >
-              Our Core Values
+              Why Choose ONE GYM
             </h2>
 
-            <div
-              className="values-grid"
+            <p
               style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(2, 1fr)",
-                gap: "40px",
+                textAlign: "center",
+                color: "#BFBFBF",
+                maxWidth: "700px",
+                margin: "0 auto 60px",
+                lineHeight: "1.8",
+                fontSize: "16px",
               }}
             >
-              {values.map((value, index) => (
-                <div
-                  key={index}
-                  className="value-card"
-                  style={{
-                    padding: "30px",
-                    background: "#000000",
-                    border: "1px solid rgba(212, 175, 55, 0.2)",
-                    borderRadius: "12px",
-                    transition: "all 0.3s ease",
-                  }}
-                >
-                  <h3
-                    style={{
-                      fontSize: "20px",
-                      fontWeight: 500,
-                      color: "#D4AF37",
-                      margin: "0 0 12px 0",
-                    }}
-                  >
-                    {value.title}
-                  </h3>
-                  <p
-                    style={{
-                      fontSize: "14px",
-                      color: "#F5F5F5",
-                      lineHeight: "1.7",
-                      margin: "0",
-                    }}
-                  >
-                    {value.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+              More than just a gym—we provide world-class facilities, expert
+              coaching, and an environment designed to help you achieve your
+              fitness goals.
+            </p>
 
-        {/* Why Choose Us Section */}
-        <section
-          className="section-padding"
-          style={{
-            padding: "80px 40px",
-            maxWidth: "1000px",
-            marginLeft: "auto",
-            marginRight: "auto",
-          }}
-        >
-          <h2
-            className="section-title"
-            style={{
-              fontSize: "40px",
-              fontWeight: 500,
-              color: "#D4AF37",
-              margin: "0 0 60px 0",
-              textAlign: "center",
-            }}
-          >
-            Why Choose One Gym
-          </h2>
+            <div
+              className="why-choose-grid"
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(3, 1fr)",
+                gap: "24px",
+              }}
+            >
+              {whyChooseOneGym.map((item, index) => {
+                const Icon = item.icon;
 
-          <div
-            className="why-choose-grid"
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(2, 1fr)",
-              gap: "40px",
-            }}
-          >
-            {whyChooseUs.map((item, index) => {
-              const Icon = item.icon;
-              return (
-                <div
-                  key={index}
-                  className="why-choose-card"
-                  style={{
-                    textAlign: "center",
-                    padding: "28px",
-                    borderRadius: "12px",
-                    border: "1px solid rgba(212, 175, 55, 0.15)",
-                    background: "rgba(255, 255, 255, 0.02)",
-                    transition: "all 0.3s ease",
-                  }}
-                >
+                return (
                   <div
-                    className="icon-circle"
+                    key={index}
+                    className="why-choose-card"
                     style={{
-                      width: "68px",
-                      height: "68px",
-                      margin: "0 auto 16px auto",
-                      borderRadius: "999px",
-                      border: "1px solid rgba(212, 175, 55, 0.25)",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      background: "rgba(212, 175, 55, 0.06)",
-                    }}
-                  >
-                    <Icon size={30} strokeWidth={1.8} color="#D4AF37" />
-                  </div>
+                      background: "#1A1A1A",
+                      border: "1px solid rgba(212,175,55,0.2)",
+                      borderRadius: "16px",
+                      padding: "30px",
+                      transition: "0.3s ease",
+                      cursor: "pointer",
 
-                  <h3
-                    style={{
-                      fontSize: "20px",
-                      fontWeight: 500,
-                      color: "#D4AF37",
-                      margin: "0 0 12px 0",
+                      // Center the last card
+                      ...(index === whyChooseOneGym.length - 1 && {
+                        gridColumn: "2 / 3",
+                      }),
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.border =
+                        "1px solid rgba(212,175,55,0.8)";
+                      e.currentTarget.style.transform = "translateY(-8px)";
+                      e.currentTarget.style.boxShadow =
+                        "0 10px 30px rgba(212,175,55,0.15)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.border =
+                        "1px solid rgba(212,175,55,0.2)";
+                      e.currentTarget.style.transform = "translateY(0)";
+                      e.currentTarget.style.boxShadow = "none";
                     }}
                   >
-                    {item.title}
-                  </h3>
-                  <p
-                    style={{
-                      fontSize: "14px",
-                      color: "#F5F5F5",
-                      lineHeight: "1.7",
-                      margin: "0",
-                    }}
-                  >
-                    {item.description}
-                  </p>
-                </div>
-              );
-            })}
+                    <div
+                      className="icon-circle"
+                      style={{
+                        width: "70px",
+                        height: "70px",
+                        borderRadius: "50%",
+                        background: "rgba(212,175,55,0.12)",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        marginBottom: "20px",
+                      }}
+                    >
+                      <Icon size={32} color="#D4AF37" />
+                    </div>
+
+                    <h3
+                      style={{
+                        color: "#D4AF37",
+                        fontSize: "22px",
+                        marginBottom: "12px",
+                        fontWeight: 600,
+                      }}
+                    >
+                      {item.title}
+                    </h3>
+
+                    <p
+                      style={{
+                        color: "#D9D9D9",
+                        lineHeight: "1.7",
+                        fontSize: "15px",
+                      }}
+                    >
+                      {item.description}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </section>
 

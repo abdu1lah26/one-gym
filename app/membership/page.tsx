@@ -64,6 +64,17 @@ export default function MembershipPage() {
           </p>
         </section>
 
+        <section className="offer-banner">
+  <span className="offer-tag">LIMITED OFFER</span>
+
+  <h3>
+    Extra <span>10% OFF</span> for Students & Couples
+  </h3>
+
+  <p>
+    Valid on all membership plans. Contact us for eligibility and enrollment.
+  </p>
+</section>
         <section className="pricing-section">
           <div className="plans-grid">
             {plans.map((plan) => (
@@ -108,6 +119,52 @@ export default function MembershipPage() {
       </div>
 
       <style jsx>{`
+
+      .offer-banner {
+  max-width: 900px;
+  margin: 0 auto 60px;
+  padding: 28px;
+
+  text-align: center;
+
+  background: #111;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  border-radius: 18px;
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+}
+
+.offer-tag {
+  display: inline-block;
+  margin-bottom: 16px;
+  padding: 6px 14px;
+
+  background: #d4af37;
+  color: #000;
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  border-radius: 999px;
+}
+
+.offer-banner h3 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(28px, 4vw, 38px);
+  font-weight: 700;
+}
+
+.offer-banner h3 span {
+  color: #d4af37;
+}
+
+.offer-banner p {
+  margin-top: 14px;
+  color: #bdbdbd;
+  font-size: 16px;
+  line-height: 1.7;
+}
         .membership-page {
           background: #000;
           min-height: 100vh;
@@ -285,7 +342,8 @@ export default function MembershipPage() {
   background: #111;
   color: #d4af37;
 
-  border: 2px solid #d4af37;
+  /* Brighter gold border */
+  border: 2px solid #f4d76b;
   border-radius: 12px;
 
   font-size: 15px;
@@ -294,11 +352,27 @@ export default function MembershipPage() {
   text-transform: uppercase;
   text-decoration: none;
 
+  /* Makes the border look richer */
   box-shadow:
-    0 0 0 1px rgba(212, 175, 55, 0.3),
-    0 0 20px rgba(212, 175, 55, 0.15);
+    inset 0 0 0 1px rgba(212, 175, 55, 0.5),
+    0 0 0 1px rgba(244, 215, 107, 0.6),
+    0 0 18px rgba(212, 175, 55, 0.25);
 
   transition: all 0.3s ease;
+}
+
+.join-link:hover {
+  background: #d4af37;
+  color: #000;
+
+  border-color: #ffe58a;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.35),
+    0 0 0 2px rgba(244, 215, 107, 0.8),
+    0 0 30px rgba(212, 175, 55, 0.45);
+
+  transform: translateY(-3px);
 }
 
 .join-link:hover {
