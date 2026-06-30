@@ -16,65 +16,6 @@ import {
 } from "lucide-react";
 
 export default function AboutPage() {
-  const values = [
-    {
-      title: "Discipline",
-      description:
-        "We believe in building habits through consistent effort and unwavering commitment to your goals.",
-    },
-    {
-      title: "Excellence",
-      description:
-        "Every workout, every session, every moment dedicated to delivering the highest standards of training.",
-    },
-    {
-      title: "Community",
-      description:
-        "Strength is found in unity. We foster a supportive environment where everyone grows together.",
-    },
-    {
-      title: "Empowerment",
-      description:
-        "We empower individuals to transform their bodies, minds, and achieve their fullest potential.",
-    },
-  ];
-
-  const whyChooseUs = [
-    {
-      icon: Trophy,
-      title: "Expert Trainers",
-      description:
-        "30+ years of combined experience with certified trainers specialized in all fitness disciplines.",
-    },
-    {
-      icon: Building2,
-      title: "Modern Facilities",
-      description:
-        "State-of-the-art equipment and spacious training areas designed for optimal performance.",
-    },
-    {
-      icon: Users,
-      title: "Community Focus",
-      description:
-        "Supportive gym environment with specialized café and unmatched member camaraderie.",
-    },
-    {
-      icon: Coffee,
-      title: "Personalized Approach",
-      description:
-        "Custom training programs tailored to your specific goals, fitness level, and preferences.",
-    },
-  ];
-
-  const facilities = [
-    { id: 1, name: "Strength Training Zone", image: "/gym1.jpg" },
-    { id: 2, name: "Cardio Area", image: "/gym2.jpg" },
-    { id: 3, name: "Functional Training", image: "/gym3.jpg" },
-    { id: 4, name: "Olympic Lifting", image: "/gym4.jpg" },
-    { id: 5, name: "Flexibility & Recovery", image: "/gym5.jpg" },
-    { id: 6, name: "Member Lounge", image: "/gym6.jpg" },
-  ];
-
   const whyChooseOneGym = [
     {
       icon: Trophy,
@@ -138,424 +79,62 @@ export default function AboutPage() {
     },
   ];
 
-  const getResponsiveStyles = () => `
-    * {
-      box-sizing: border-box;
-    }
-
-    /* Desktop Styles (1024px and above) */
-    .hero-title {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      font-weight: 500;
-      color: #d4af37;
-      margin: 0 0 20px;
-    }
-
-    .hero-logo {
-      height: clamp(40px, 6vw, 70px);
-      width: auto;
-      display: block;
-    }
-
-    .hero-description {
-      font-size: clamp(16px, 2vw, 18px);
-      color: #f5f5f5;
-      max-width: 700px;
-      margin: 0 auto;
-      line-height: 1.7;
-    }
-
-    .section-title {
-      font-size: clamp(28px, 5vw, 40px);
-      font-weight: 500;
-      color: #D4AF37;
-    }
-
-    .why-choose-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .facilities-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-    }
-
-    .story-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: center;
-    }
-
-    .cta-buttons {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .cta-button {
-      width: auto;
-    }
-
-    /* Tablet Styles (768px - 1023px) */
-    @media (max-width: 1024px) {
-      .hero-section {
-        padding: 60px 24px !important;
-      }
-
-      .section-padding {
-        padding: 60px 24px !important;
-      }
-
-      .hero-title {
-        gap: 8px;
-        font-size: 36px !important;
-      }
-
-      .section-title {
-        font-size: 32px !important;
-        margin-bottom: 40px !important;
-      }
-
-      .hero-description {
-        font-size: 16px !important;
-      }
-
-      .story-grid {
-        grid-template-columns: 1fr !important;
-        gap: 30px !important;
-      }
-
-      .story-image {
-        height: 300px !important;
-      }
-
-      .why-choose-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 20px !important;
-      }
-
-      .why-choose-card {
-        padding: 24px !important;
-      }
-
-      .why-choose-card h3 {
-        font-size: 20px !important;
-      }
-
-      .why-choose-card p {
-        font-size: 14px !important;
-      }
-
-      .facilities-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 24px !important;
-      }
-
-      .facility-card {
-        height: 280px !important;
-      }
-
-      .ready-section {
-        padding: 60px 24px !important;
-      }
-    }
-
-    /* Mobile Tablet Styles (481px - 767px) */
-    @media (max-width: 768px) {
-      .hero-section {
-        padding: 40px 16px !important;
-      }
-
-      .section-padding {
-        padding: 40px 16px !important;
-      }
-
-      .hero-title {
-        gap: 6px;
-        font-size: 28px !important;
-        margin-bottom: 12px !important;
-      }
-
-      .hero-logo {
-        height: 36px !important;
-      }
-
-      .hero-description {
-        font-size: 15px !important;
-      }
-
-      .section-title {
-        font-size: 28px !important;
-        margin-bottom: 30px !important;
-      }
-
-      .story-grid {
-        grid-template-columns: 1fr !important;
-        gap: 24px !important;
-      }
-
-      .story-image {
-        height: 250px !important;
-        margin-top: 20px !important;
-      }
-
-      .story-text p {
-        font-size: 15px !important;
-        margin-bottom: 15px !important;
-      }
-
-      .why-choose-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 16px !important;
-      }
-
-      .why-choose-card {
-        padding: 20px !important;
-      }
-
-      .why-choose-card h3 {
-        font-size: 18px !important;
-      }
-
-      .why-choose-card p {
-        font-size: 13px !important;
-        line-height: 1.6 !important;
-      }
-
-      .icon-circle {
-        width: 56px !important;
-        height: 56px !important;
-        margin-bottom: 12px !important;
-      }
-
-      .icon-circle svg {
-        width: 24px !important;
-        height: 24px !important;
-      }
-
-      .facilities-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 16px !important;
-      }
-
-      .facility-card {
-        height: 240px !important;
-      }
-
-      .facility-name {
-        font-size: 14px !important;
-      }
-
-      .ready-section {
-        padding: 40px 16px !important;
-      }
-
-      .cta-buttons {
-        flex-direction: column !important;
-        gap: 12px !important;
-      }
-
-      .cta-button {
-        width: 100% !important;
-        padding: 12px 24px !important;
-        font-size: 14px !important;
-      }
-
-      .section-padding {
-        max-width: 100% !important;
-        margin: 0 !important;
-        padding-left: 16px !important;
-        padding-right: 16px !important;
-      }
-    }
-
-    /* Mobile Styles (320px - 480px) */
-    @media (max-width: 480px) {
-      .hero-section {
-        padding: 40px 12px !important;
-      }
-
-      .section-padding {
-        padding: 30px 12px !important;
-        max-width: 100% !important;
-        margin: 0 !important;
-      }
-
-      .hero-title {
-        gap: 4px;
-        font-size: 22px !important;
-        margin-bottom: 12px !important;
-      }
-
-      .hero-logo {
-        height: 28px !important;
-      }
-
-      .hero-description {
-        font-size: 14px !important;
-        line-height: 1.6 !important;
-      }
-
-      .section-title {
-        font-size: 24px !important;
-        margin-bottom: 24px !important;
-      }
-
-      .story-grid {
-        grid-template-columns: 1fr !important;
-        gap: 20px !important;
-      }
-
-      .story-text p {
-        font-size: 14px !important;
-        margin-bottom: 12px !important;
-        line-height: 1.6 !important;
-      }
-
-      .story-image {
-        height: 200px !important;
-      }
-
-      .value-card {
-        padding: 16px !important;
-      }
-
-      .value-card h3 {
-        font-size: 16px !important;
-      }
-
-      .value-card p {
-        font-size: 12px !important;
-      }
-
-      .why-choose-grid {
-        grid-template-columns: 1fr !important;
-        gap: 12px !important;
-      }
-
-      .why-choose-card {
-        padding: 16px !important;
-      }
-
-      .why-choose-card h3 {
-        font-size: 16px !important;
-        margin-bottom: 8px !important;
-      }
-
-      .why-choose-card p {
-        font-size: 12px !important;
-        line-height: 1.5 !important;
-      }
-
-      .icon-circle {
-        width: 48px !important;
-        height: 48px !important;
-        margin-bottom: 10px !important;
-      }
-
-      .icon-circle svg {
-        width: 20px !important;
-        height: 20px !important;
-      }
-
-      .facilities-grid {
-        grid-template-columns: 1fr !important;
-        gap: 12px !important;
-      }
-
-      .facility-card {
-        height: 200px !important;
-      }
-
-      .facility-name {
-        font-size: 13px !important;
-        padding: 16px !important;
-      }
-
-      .ready-section {
-        padding: 30px 12px !important;
-      }
-
-      .cta-buttons {
-        flex-direction: column !important;
-        gap: 10px !important;
-      }
-
-      .cta-button {
-        width: 100% !important;
-        padding: 12px 20px !important;
-        font-size: 13px !important;
-      }
-
-      .story-text button {
-        width: 100% !important;
-        padding: 12px 20px !important;
-        font-size: 13px !important;
-      }
-    }
-
-    /* Extra Small Mobile (< 320px) */
-    @media (max-width: 320px) {
-      .hero-title {
-        font-size: 20px !important;
-      }
-
-      .section-title {
-        font-size: 20px !important;
-      }
-
-      .hero-description {
-        font-size: 13px !important;
-      }
-
-      .story-text p {
-        font-size: 13px !important;
-      }
-
-      .why-choose-card h3 {
-        font-size: 14px !important;
-      }
-
-      .why-choose-card p {
-        font-size: 11px !important;
-      }
-    }
-  `;
+  const facilities = [
+    { id: 1, name: "Strength Training Zone", image: "/gym1.jpg" },
+    { id: 2, name: "Cardio Area", image: "/gym2.jpg" },
+    { id: 3, name: "Functional Training", image: "/gym3.jpg" },
+    { id: 4, name: "Olympic Lifting", image: "/gym4.jpg" },
+    { id: 5, name: "Flexibility & Recovery", image: "/gym5.jpg" },
+    { id: 6, name: "Member Lounge", image: "/gym6.jpg" },
+  ];
 
   return (
     <main style={{ background: "#000000", minHeight: "100vh" }}>
-      <style>{getResponsiveStyles()}</style>
       <Header />
 
-      <div style={{ paddingTop: "80px" }}>
+      <div style={{ paddingTop: "60px" }}>
         {/* Hero Section */}
         <section
-          className="hero-section"
           style={{
-            padding: "80px 40px",
+            padding: "40px 16px 50px",
             textAlign: "center",
             background: "linear-gradient(135deg, #1A1A1A 0%, #000000 100%)",
           }}
         >
-          <h1 className="hero-title">
+          <h1
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: "8px",
+              fontSize: "clamp(24px, 5vw, 48px)",
+              fontWeight: 600,
+              color: "#d4af37",
+              margin: "0 0 16px",
+              flexWrap: "wrap",
+            }}
+          >
             <span>About</span>
             <img
               src="/logo-text-Photoroom.png"
               alt="ONE GYM"
-              className="hero-logo"
+              style={{
+                height: "clamp(30px, 5vw, 60px)",
+                width: "auto",
+                display: "block",
+              }}
             />
           </h1>
 
-          <p className="hero-description">
+          <p
+            style={{
+              fontSize: "clamp(13px, 2vw, 16px)",
+              color: "#f5f5f5",
+              maxWidth: "100%",
+              margin: "0 auto",
+              lineHeight: 1.6,
+            }}
+          >
             Where fitness meets discipline. Building stronger bodies, stronger
             minds, and an unbreakable community.
           </p>
@@ -563,18 +142,19 @@ export default function AboutPage() {
 
         {/* Our Story Section */}
         <section
-          className="section-padding"
           style={{
-            padding: "80px 40px",
+            padding: "40px 16px 50px",
             maxWidth: "100%",
             marginLeft: "auto",
             marginRight: "auto",
           }}
         >
           <h2
-            className="section-title"
             style={{
-              margin: "0 0 30px 0",
+              fontSize: "clamp(22px, 4vw, 36px)",
+              fontWeight: 600,
+              color: "#D4AF37",
+              margin: "0 0 32px",
               textAlign: "center",
             }}
           >
@@ -582,24 +162,23 @@ export default function AboutPage() {
           </h2>
 
           <div
-            className="story-grid"
             style={{
               display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gap: "40px",
+              gridTemplateColumns: "1fr",
+              gap: "24px",
               alignItems: "center",
               maxWidth: "1000px",
               marginLeft: "auto",
               marginRight: "auto",
             }}
           >
-            <div className="story-text">
+            <div>
               <p
                 style={{
-                  fontSize: "16px",
+                  fontSize: "clamp(13px, 1.8vw, 15px)",
                   color: "#F5F5F5",
-                  lineHeight: "1.8",
-                  margin: "0 0 20px 0",
+                  lineHeight: 1.7,
+                  margin: "0 0 16px",
                 }}
               >
                 One Gym was founded with a singular vision: to create a space
@@ -609,10 +188,10 @@ export default function AboutPage() {
 
               <p
                 style={{
-                  fontSize: "16px",
+                  fontSize: "clamp(13px, 1.8vw, 15px)",
                   color: "#F5F5F5",
-                  lineHeight: "1.8",
-                  margin: "0 0 20px 0",
+                  lineHeight: 1.7,
+                  margin: "0 0 16px",
                 }}
               >
                 We believe that true transformation happens when discipline
@@ -623,10 +202,10 @@ export default function AboutPage() {
 
               <p
                 style={{
-                  fontSize: "16px",
+                  fontSize: "clamp(13px, 1.8vw, 15px)",
                   color: "#F5F5F5",
-                  lineHeight: "1.8",
-                  margin: "0 0 30px 0",
+                  lineHeight: 1.7,
+                  margin: "0 0 24px",
                 }}
               >
                 At One Gym, we don't just build bodies—we build character,
@@ -638,14 +217,15 @@ export default function AboutPage() {
                   style={{
                     background: "#D4AF37",
                     color: "#000000",
-                    padding: "14px 40px",
-                    fontSize: "14px",
-                    fontWeight: 500,
+                    padding: "clamp(11px, 2vw, 14px) clamp(24px, 4vw, 40px)",
+                    fontSize: "clamp(12px, 1.6vw, 14px)",
+                    fontWeight: 600,
                     border: "none",
                     borderRadius: "8px",
                     cursor: "pointer",
                     transition: "all 0.3s ease",
                     width: "auto",
+                    minHeight: "44px",
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.transform = "scale(1.05)";
@@ -663,9 +243,8 @@ export default function AboutPage() {
             </div>
 
             <div
-              className="story-image"
               style={{
-                height: "400px",
+                height: "clamp(200px, 50vw, 400px)",
                 background: "linear-gradient(135deg, #D4AF37 0%, #1A1A1A 100%)",
                 borderRadius: "12px",
                 display: "flex",
@@ -673,7 +252,7 @@ export default function AboutPage() {
                 justifyContent: "center",
                 fontSize: "18px",
                 color: "#000000",
-                fontWeight: 500
+                fontWeight: 500,
               }}
             >
               <Image
@@ -685,6 +264,7 @@ export default function AboutPage() {
                   width: "100%",
                   height: "auto",
                   maxWidth: "300px",
+                  objectFit: "contain",
                 }}
               />
             </div>
@@ -693,9 +273,8 @@ export default function AboutPage() {
 
         {/* Why Choose ONE GYM */}
         <section
-          className="section-padding"
           style={{
-            padding: "80px 40px",
+            padding: "40px 16px 50px",
             background: "#111111",
           }}
         >
@@ -706,10 +285,12 @@ export default function AboutPage() {
             }}
           >
             <h2
-              className="section-title"
               style={{
+                fontSize: "clamp(22px, 4vw, 36px)",
+                fontWeight: 600,
+                color: "#D4AF37",
                 textAlign: "center",
-                marginBottom: "16px",
+                marginBottom: "12px",
               }}
             >
               Why Choose ONE GYM
@@ -719,10 +300,10 @@ export default function AboutPage() {
               style={{
                 textAlign: "center",
                 color: "#BFBFBF",
-                maxWidth: "700px",
-                margin: "0 auto 60px",
-                lineHeight: "1.8",
-                fontSize: "16px",
+                maxWidth: "100%",
+                margin: "0 auto 32px",
+                lineHeight: 1.7,
+                fontSize: "clamp(12px, 1.6vw, 15px)",
               }}
             >
               More than just a gym—we provide world-class facilities, expert
@@ -731,11 +312,10 @@ export default function AboutPage() {
             </p>
 
             <div
-              className="why-choose-grid"
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(3, 1fr)",
-                gap: "24px",
+                gridTemplateColumns: "1fr",
+                gap: "16px",
               }}
             >
               {whyChooseOneGym.map((item, index) => {
@@ -744,68 +324,74 @@ export default function AboutPage() {
                 return (
                   <div
                     key={index}
-                    className="why-choose-card"
                     style={{
                       background: "#1A1A1A",
                       border: "1px solid rgba(212,175,55,0.2)",
-                      borderRadius: "16px",
-                      padding: "30px",
-                      transition: "0.3s ease",
+                      borderRadius: "14px",
+                      padding: "18px",
+                      transition: "all 0.3s ease",
                       cursor: "pointer",
-                      ...(index === whyChooseOneGym.length - 1 && {
-                        gridColumn: "2 / 3",
-                      }),
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.border =
-                        "1px solid rgba(212,175,55,0.8)";
-                      e.currentTarget.style.transform = "translateY(-8px)";
+                      e.currentTarget.style.borderColor =
+                        "rgba(212,175,55,0.8)";
+                      e.currentTarget.style.transform = "translateY(-4px)";
                       e.currentTarget.style.boxShadow =
-                        "0 10px 30px rgba(212,175,55,0.15)";
+                        "0 8px 20px rgba(212,175,55,0.15)";
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.border =
-                        "1px solid rgba(212,175,55,0.2)";
+                      e.currentTarget.style.borderColor =
+                        "rgba(212,175,55,0.2)";
                       e.currentTarget.style.transform = "translateY(0)";
                       e.currentTarget.style.boxShadow = "none";
                     }}
                   >
                     <div
-                      className="icon-circle"
                       style={{
-                        width: "70px",
-                        height: "70px",
-                        borderRadius: "50%",
-                        background: "rgba(212,175,55,0.12)",
                         display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        marginBottom: "20px",
+                        alignItems: "flex-start",
+                        gap: "14px",
                       }}
                     >
-                      <Icon size={32} color="#D4AF37" />
+                      <div
+                        style={{
+                          width: "48px",
+                          height: "48px",
+                          minWidth: "48px",
+                          borderRadius: "50%",
+                          background: "rgba(212,175,55,0.12)",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                        }}
+                      >
+                        <Icon size={24} color="#D4AF37" />
+                      </div>
+
+                      <div style={{ flex: 1 }}>
+                        <h3
+                          style={{
+                            color: "#D4AF37",
+                            fontSize: "clamp(15px, 1.8vw, 18px)",
+                            margin: "0 0 6px",
+                            fontWeight: 600,
+                          }}
+                        >
+                          {item.title}
+                        </h3>
+
+                        <p
+                          style={{
+                            color: "#D9D9D9",
+                            lineHeight: 1.5,
+                            fontSize: "clamp(12px, 1.5vw, 13px)",
+                            margin: 0,
+                          }}
+                        >
+                          {item.description}
+                        </p>
+                      </div>
                     </div>
-
-                    <h3
-                      style={{
-                        color: "#D4AF37",
-                        fontSize: "22px",
-                        marginBottom: "12px",
-                        fontWeight: 600,
-                      }}
-                    >
-                      {item.title}
-                    </h3>
-
-                    <p
-                      style={{
-                        color: "#D9D9D9",
-                        lineHeight: "1.7",
-                        fontSize: "15px",
-                      }}
-                    >
-                      {item.description}
-                    </p>
                   </div>
                 );
               })}
@@ -815,9 +401,8 @@ export default function AboutPage() {
 
         {/* Facilities Section */}
         <section
-          className="section-padding"
           style={{
-            padding: "80px 40px",
+            padding: "40px 16px 50px",
             background: "#1A1A1A",
           }}
         >
@@ -829,9 +414,11 @@ export default function AboutPage() {
             }}
           >
             <h2
-              className="section-title"
               style={{
-                margin: "0 0 60px 0",
+                fontSize: "clamp(22px, 4vw, 36px)",
+                fontWeight: 600,
+                color: "#D4AF37",
+                margin: "0 0 32px",
                 textAlign: "center",
               }}
             >
@@ -839,20 +426,18 @@ export default function AboutPage() {
             </h2>
 
             <div
-              className="facilities-grid"
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(3, 1fr)",
-                gap: "30px",
+                gridTemplateColumns: "1fr",
+                gap: "16px",
               }}
             >
               {facilities.map((facility) => (
                 <div
                   key={facility.id}
-                  className="facility-card"
                   style={{
                     position: "relative",
-                    height: "300px",
+                    height: "220px",
                     borderRadius: "12px",
                     overflow: "hidden",
                     border: "1px solid rgba(212, 175, 55, 0.2)",
@@ -860,15 +445,15 @@ export default function AboutPage() {
                     cursor: "pointer",
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.border =
-                      "1px solid rgba(212,175,55,0.8)";
+                    e.currentTarget.style.borderColor =
+                      "rgba(212,175,55,0.8)";
                     e.currentTarget.style.transform = "scale(1.02)";
                     e.currentTarget.style.boxShadow =
-                      "0 10px 30px rgba(212,175,55,0.15)";
+                      "0 8px 20px rgba(212,175,55,0.15)";
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.border =
-                      "1px solid rgba(212, 175, 55, 0.2)";
+                    e.currentTarget.style.borderColor =
+                      "rgba(212, 175, 55, 0.2)";
                     e.currentTarget.style.transform = "scale(1)";
                     e.currentTarget.style.boxShadow = "none";
                   }}
@@ -894,20 +479,19 @@ export default function AboutPage() {
                       left: 0,
                       width: "100%",
                       background:
-                        "linear-gradient(to top, rgba(0,0,0,0.8), transparent)",
-                      padding: "20px",
+                        "linear-gradient(to top, rgba(0,0,0,0.9), transparent)",
+                      padding: "16px",
                       display: "flex",
                       alignItems: "flex-end",
                       height: "100%",
                     }}
                   >
                     <h3
-                      className="facility-name"
                       style={{
-                        fontSize: "16px",
+                        fontSize: "clamp(12px, 1.5vw, 15px)",
                         fontWeight: 500,
                         color: "#D4AF37",
-                        margin: "0",
+                        margin: 0,
                       }}
                     >
                       {facility.name}
@@ -921,30 +505,37 @@ export default function AboutPage() {
 
         {/* CTA Section */}
         <section
-          className="ready-section"
           style={{
-            padding: "80px 40px",
+            padding: "40px 16px 50px",
             textAlign: "center",
             maxWidth: "100%",
             marginLeft: "auto",
             marginRight: "auto",
           }}
         >
-          <div style={{ maxWidth: "800px", marginLeft: "auto", marginRight: "auto" }}>
+          <div
+            style={{
+              maxWidth: "800px",
+              marginLeft: "auto",
+              marginRight: "auto",
+            }}
+          >
             <h2
-              className="section-title"
               style={{
-                margin: "0 0 20px 0",
+                fontSize: "clamp(22px, 4vw, 36px)",
+                fontWeight: 600,
+                color: "#D4AF37",
+                margin: "0 0 16px",
               }}
             >
               Ready to Transform?
             </h2>
             <p
               style={{
-                fontSize: "16px",
+                fontSize: "clamp(12px, 1.6vw, 15px)",
                 color: "#F5F5F5",
-                margin: "0 0 40px 0",
-                lineHeight: "1.7",
+                margin: "0 0 28px",
+                lineHeight: 1.6,
               }}
             >
               Join our community and start your fitness journey today. Choose the
@@ -952,26 +543,29 @@ export default function AboutPage() {
             </p>
 
             <div
-              className="cta-buttons"
               style={{
                 display: "flex",
-                gap: "20px",
+                gap: "12px",
                 justifyContent: "center",
+                flexWrap: "wrap",
               }}
             >
               <Link href="/membership">
                 <button
-                  className="cta-button"
                   style={{
                     background: "#D4AF37",
                     color: "#000000",
-                    padding: "14px 40px",
-                    fontSize: "14px",
-                    fontWeight: 500,
+                    padding: "clamp(11px, 2vw, 14px) clamp(20px, 3vw, 40px)",
+                    fontSize: "clamp(12px, 1.6vw, 14px)",
+                    fontWeight: 600,
                     border: "none",
                     borderRadius: "8px",
                     cursor: "pointer",
                     transition: "all 0.3s ease",
+                    minHeight: "44px",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    whiteSpace: "nowrap",
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.transform = "scale(1.05)";
@@ -989,17 +583,20 @@ export default function AboutPage() {
 
               <Link href="/contact">
                 <button
-                  className="cta-button"
                   style={{
                     background: "transparent",
                     color: "#D4AF37",
-                    padding: "14px 40px",
-                    fontSize: "14px",
-                    fontWeight: 500,
+                    padding: "clamp(11px, 2vw, 14px) clamp(20px, 3vw, 40px)",
+                    fontSize: "clamp(12px, 1.6vw, 14px)",
+                    fontWeight: 600,
                     border: "2px solid #D4AF37",
                     borderRadius: "8px",
                     cursor: "pointer",
                     transition: "all 0.3s ease",
+                    minHeight: "44px",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    whiteSpace: "nowrap",
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.background = "#D4AF37";
@@ -1017,6 +614,101 @@ export default function AboutPage() {
           </div>
         </section>
       </div>
+
+      <style jsx>{`
+        @media (min-width: 481px) and (max-width: 768px) {
+          /* Mobile Tablet Styles */
+        }
+
+        @media (min-width: 769px) and (max-width: 1023px) {
+          /* Tablet Styles */
+          section {
+            padding: 50px 32px 60px !important;
+          }
+
+          h2 {
+            font-size: 36px !important;
+          }
+
+          p {
+            font-size: 14px !important;
+          }
+
+          /* Story Grid */
+          .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+          }
+
+          /* Why Choose Grid */
+          .why-choose-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+          }
+
+          /* Facilities Grid */
+          .facilities-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+          }
+
+          .facility-card {
+            height: 280px !important;
+          }
+        }
+
+        @media (min-width: 1024px) {
+          /* Desktop Styles */
+          section {
+            padding: 80px 40px !important;
+          }
+
+          h2 {
+            font-size: 40px !important;
+          }
+
+          /* Story Grid */
+          .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+          }
+
+          /* Why Choose Grid */
+          .why-choose-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+          }
+
+          .why-choose-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+          }
+
+          /* Facilities Grid */
+          .facilities-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+          }
+
+          .facility-card {
+            height: 300px !important;
+          }
+        }
+      `}</style>
     </main>
   );
 }
