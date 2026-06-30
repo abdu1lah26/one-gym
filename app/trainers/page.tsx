@@ -18,7 +18,7 @@ export default function TrainersPage() {
       experience: "5+ Years",
       clients: "200+",
       rating: "4.9",
-      whatsapp: "919876543210", // replace with actual WhatsApp number
+      whatsapp: "919876543210",
       specialties: ["Strength Training", "Fat Loss", "CrossFit"],
     },
     {
@@ -29,7 +29,7 @@ export default function TrainersPage() {
       experience: "7+ Years",
       clients: "350+",
       rating: "4.8",
-      whatsapp: "919123456789", // replace with actual WhatsApp number
+      whatsapp: "919123456789",
       specialties: ["Body Building", "MMA", "Personal Training"],
     },
   ];
@@ -45,21 +45,21 @@ export default function TrainersPage() {
       >
         <Header />
 
-        <div style={{ paddingTop: "80px" }}>
+        <div style={{ paddingTop: "60px" }}>
           {/* Hero Section */}
           <section
             style={{
               position: "relative",
               textAlign: "center",
-              padding: "100px 24px 80px",
+              padding: "clamp(40px, 8vw, 100px) 16px",
               overflow: "hidden",
             }}
           >
             <div
               style={{
                 position: "absolute",
-                width: "350px",
-                height: "350px",
+                width: "clamp(200px, 50vw, 350px)",
+                height: "clamp(200px, 50vw, 350px)",
                 background: "rgba(212,175,55,0.12)",
                 filter: "blur(120px)",
                 top: "50%",
@@ -72,11 +72,12 @@ export default function TrainersPage() {
             <h1
               style={{
                 position: "relative",
-                fontSize: "clamp(36px, 8vw, 64px)",
+                fontSize: "clamp(28px, 7vw, 64px)",
                 fontWeight: 700,
                 color: "#D4AF37",
-                letterSpacing: "-2px",
-                marginBottom: "24px",
+                letterSpacing: "-1px",
+                marginBottom: "16px",
+                margin: "0 0 16px",
               }}
             >
               Expert Trainers
@@ -88,8 +89,8 @@ export default function TrainersPage() {
                 maxWidth: "700px",
                 margin: "0 auto",
                 color: "#BFBFBF",
-                lineHeight: "1.8",
-                fontSize: "18px",
+                lineHeight: 1.7,
+                fontSize: "clamp(13px, 2vw, 16px)",
               }}
             >
               Train with elite fitness professionals dedicated to helping you
@@ -103,10 +104,16 @@ export default function TrainersPage() {
             style={{
               maxWidth: "1280px",
               margin: "0 auto",
-              padding: "40px 24px 100px",
+              padding: "clamp(30px, 5vw, 60px) 16px clamp(60px, 8vw, 100px)",
             }}
           >
-            <div className="trainer-grid">
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "1fr",
+                gap: "clamp(20px, 3vw, 40px)",
+              }}
+            >
               {trainers.map((trainer) => {
                 const whatsappMessage = `Hello ${trainer.name},
 
@@ -126,27 +133,87 @@ Thank you.`;
                 )}`;
 
                 return (
-                  <div className="trainer-card" key={trainer.id}>
-                    <div className="image-wrapper">
+                  <div
+                    key={trainer.id}
+                    style={{
+                      background: "linear-gradient(180deg, #1a1a1a 0%, #111111 100%)",
+                      border: "1px solid rgba(212, 175, 55, 0.35)",
+                      borderRadius: "clamp(16px, 3vw, 28px)",
+                      overflow: "hidden",
+                      transition: "all 0.35s ease",
+                      cursor: "pointer",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = "translateY(-8px)";
+                      e.currentTarget.style.borderColor = "#d4af37";
+                      e.currentTarget.style.boxShadow =
+                        "0 18px 40px rgba(212, 175, 55, 0.18)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = "translateY(0)";
+                      e.currentTarget.style.borderColor =
+                        "rgba(212, 175, 55, 0.35)";
+                      e.currentTarget.style.boxShadow = "none";
+                    }}
+                  >
+                    {/* Image */}
+                    <div
+                      style={{
+                        position: "relative",
+                        height: "clamp(200px, 60vw, 380px)",
+                        overflow: "hidden",
+                      }}
+                    >
                       <img
                         src={trainer.image}
                         alt={trainer.name}
-                        className="trainer-image"
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "cover",
+                          transition: "transform 0.6s ease",
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.transform = "scale(1.08)";
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.transform = "scale(1)";
+                        }}
                       />
 
-                      <div className="elite-badge">
+                      {/* Badge */}
+                      <div
+                        style={{
+                          position: "absolute",
+                          top: "clamp(12px, 2vw, 18px)",
+                          right: "clamp(12px, 2vw, 18px)",
+                          background: "linear-gradient(135deg, #f6d365, #d4af37)",
+                          color: "black",
+                          fontSize: "clamp(10px, 1.2vw, 12px)",
+                          fontWeight: 700,
+                          padding: "clamp(6px, 1vw, 8px) clamp(10px, 2vw, 14px)",
+                          borderRadius: "999px",
+                          boxShadow: "0 6px 20px rgba(212, 175, 55, 0.35)",
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "4px",
+                          whiteSpace: "nowrap",
+                        }}
+                      >
                         <BadgeCheck size={14} />
                         <span>Elite Coach</span>
                       </div>
                     </div>
 
-                    <div style={{ padding: "30px" }}>
+                    {/* Content */}
+                    <div style={{ padding: "clamp(20px, 4vw, 30px)" }}>
                       <h3
                         style={{
                           color: "#D4AF37",
-                          fontSize: "28px",
-                          marginBottom: "8px",
+                          fontSize: "clamp(20px, 3vw, 28px)",
+                          marginBottom: "6px",
                           fontWeight: 700,
+                          margin: "0 0 6px",
                         }}
                       >
                         {trainer.name}
@@ -156,6 +223,8 @@ Thank you.`;
                         style={{
                           color: "#CFCFCF",
                           marginBottom: "12px",
+                          fontSize: "clamp(12px, 1.5vw, 14px)",
+                          margin: "0 0 12px",
                         }}
                       >
                         {trainer.type}
@@ -164,14 +233,21 @@ Thank you.`;
                       <p
                         style={{
                           color: "#D4AF37",
-                          marginBottom: "20px",
+                          marginBottom: "16px",
                           fontWeight: 600,
                           display: "flex",
                           alignItems: "center",
                           gap: "8px",
+                          fontSize: "clamp(12px, 1.5vw, 14px)",
+                          margin: "0 0 16px",
                         }}
                       >
-                        <Star size={18} fill="#D4AF37" strokeWidth={1.5} />
+                        <Star
+                          size={16}
+                          fill="#D4AF37"
+                          strokeWidth={1.5}
+                          style={{ minWidth: "16px" }}
+                        />
                         {trainer.rating} Rating
                       </p>
 
@@ -180,22 +256,38 @@ Thank you.`;
                           height: "1px",
                           background:
                             "linear-gradient(90deg,#D4AF37,transparent)",
-                          marginBottom: "24px",
+                          marginBottom: "clamp(16px, 3vw, 24px)",
                         }}
                       />
 
                       {/* Stats */}
-                      <div className="stats-grid">
-                        <div className="stat-card">
+                      <div
+                        style={{
+                          display: "grid",
+                          gridTemplateColumns: "1fr 1fr",
+                          gap: "clamp(12px, 2vw, 16px)",
+                          marginBottom: "clamp(20px, 3vw, 24px)",
+                        }}
+                      >
+                        <div
+                          style={{
+                            background: "rgba(255, 255, 255, 0.03)",
+                            border: "1px solid rgba(255, 255, 255, 0.05)",
+                            borderRadius: "12px",
+                            padding: "clamp(14px, 2vw, 18px)",
+                            textAlign: "center",
+                          }}
+                        >
                           <Award
-                            size={28}
+                            size={24}
                             color="#D4AF37"
-                            style={{ marginBottom: "8px" }}
+                            style={{ marginBottom: "6px" }}
                           />
 
                           <div
                             style={{
                               fontWeight: 700,
+                              fontSize: "clamp(12px, 1.5vw, 14px)",
                             }}
                           >
                             {trainer.experience}
@@ -204,22 +296,34 @@ Thank you.`;
                           <small
                             style={{
                               color: "#999",
+                              fontSize: "clamp(11px, 1.2vw, 12px)",
+                              display: "block",
+                              marginTop: "4px",
                             }}
                           >
                             Experience
                           </small>
                         </div>
 
-                        <div className="stat-card">
+                        <div
+                          style={{
+                            background: "rgba(255, 255, 255, 0.03)",
+                            border: "1px solid rgba(255, 255, 255, 0.05)",
+                            borderRadius: "12px",
+                            padding: "clamp(14px, 2vw, 18px)",
+                            textAlign: "center",
+                          }}
+                        >
                           <Users
-                            size={28}
+                            size={24}
                             color="#D4AF37"
-                            style={{ marginBottom: "8px" }}
+                            style={{ marginBottom: "6px" }}
                           />
 
                           <div
                             style={{
                               fontWeight: 700,
+                              fontSize: "clamp(12px, 1.5vw, 14px)",
                             }}
                           >
                             {trainer.clients}
@@ -228,6 +332,9 @@ Thank you.`;
                           <small
                             style={{
                               color: "#999",
+                              fontSize: "clamp(11px, 1.2vw, 12px)",
+                              display: "block",
+                              marginTop: "4px",
                             }}
                           >
                             Clients
@@ -238,24 +345,45 @@ Thank you.`;
                       {/* Skills */}
                       <div
                         style={{
-                          marginBottom: "28px",
+                          marginBottom: "clamp(20px, 3vw, 28px)",
                         }}
                       >
                         <p
                           style={{
                             color: "#D4AF37",
-                            fontSize: "12px",
+                            fontSize: "clamp(10px, 1.2vw, 12px)",
                             letterSpacing: "1px",
                             textTransform: "uppercase",
-                            marginBottom: "14px",
+                            marginBottom: "10px",
+                            margin: "0 0 10px",
+                            fontWeight: 600,
                           }}
                         >
                           Specialties
                         </p>
 
-                        <div className="specialties">
+                        <div
+                          style={{
+                            display: "flex",
+                            flexWrap: "wrap",
+                            gap: "8px",
+                          }}
+                        >
                           {trainer.specialties.map((item, index) => (
-                            <span key={index} className="specialty-tag">
+                            <span
+                              key={index}
+                              style={{
+                                background: "rgba(212, 175, 55, 0.12)",
+                                border: "1px solid rgba(212, 175, 55, 0.25)",
+                                color: "#d4af37",
+                                padding:
+                                  "clamp(6px, 1vw, 8px) clamp(10px, 2vw, 14px)",
+                                borderRadius: "999px",
+                                fontSize: "clamp(10px, 1.2vw, 12px)",
+                                fontWeight: 500,
+                                whiteSpace: "nowrap",
+                              }}
+                            >
                               {item}
                             </span>
                           ))}
@@ -266,8 +394,45 @@ Thank you.`;
                         href={whatsappUrl}
                         target="_blank"
                         rel="noopener noreferrer"
+                        style={{ display: "block", textDecoration: "none" }}
                       >
-                        <button className="cta-button">
+                        <button
+                          style={{
+                            width: "100%",
+                            background:
+                              "linear-gradient(135deg, #f6d365, #d4af37)",
+                            color: "black",
+                            border: "none",
+                            borderRadius: "clamp(12px, 2vw, 14px)",
+                            padding: "clamp(13px, 2vw, 16px)",
+                            fontSize: "clamp(12px, 1.5vw, 15px)",
+                            fontWeight: 700,
+                            cursor: "pointer",
+                            transition: "all 0.3s ease",
+                            boxShadow: "0 8px 24px rgba(212, 175, 55, 0.25)",
+                            minHeight: "44px",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                          }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.transform =
+                              "translateY(-2px)";
+                            e.currentTarget.style.boxShadow =
+                              "0 12px 32px rgba(212, 175, 55, 0.35)";
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.transform = "translateY(0)";
+                            e.currentTarget.style.boxShadow =
+                              "0 8px 24px rgba(212, 175, 55, 0.25)";
+                          }}
+                          onTouchStart={(e) => {
+                            e.currentTarget.style.transform = "scale(0.98)";
+                          }}
+                          onTouchEnd={(e) => {
+                            e.currentTarget.style.transform = "scale(1)";
+                          }}
+                        >
                           Book Free Consultation
                         </button>
                       </a>
@@ -281,119 +446,80 @@ Thank you.`;
       </main>
 
       <style jsx>{`
-        .trainer-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-          gap: 40px;
+        * {
+          box-sizing: border-box;
         }
 
-        .trainer-card {
-          background: linear-gradient(180deg, #1a1a1a 0%, #111111 100%);
-          border: 1px solid rgba(212, 175, 55, 0.35);
-          border-radius: 28px;
-          overflow: hidden;
-          transition: all 0.35s ease;
+        /* Mobile Tablet Styles (481px - 768px) */
+        @media (min-width: 481px) and (max-width: 768px) {
+          section {
+            padding: clamp(40px, 6vw, 60px) 20px !important;
+          }
         }
 
-        .trainer-card:hover {
-          transform: translateY(-10px);
-          border-color: #d4af37;
-          box-shadow: 0 18px 40px rgba(212, 175, 55, 0.18);
-        }
-
-        .image-wrapper {
-          position: relative;
-          height: 380px;
-          overflow: hidden;
-        }
-
-        .trainer-image {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          transition: transform 0.6s ease;
-        }
-
-        .trainer-card:hover .trainer-image {
-          transform: scale(1.08);
-        }
-
-        .elite-badge {
-          position: absolute;
-          top: 18px;
-          right: 18px;
-          background: linear-gradient(135deg, #f6d365, #d4af37);
-          color: black;
-          font-size: 12px;
-          font-weight: 700;
-          padding: 8px 14px;
-          border-radius: 999px;
-          box-shadow: 0 6px 20px rgba(212, 175, 55, 0.35);
-          display: flex;
-          align-items: center;
-          gap: 6px;
-        }
-
-        .stats-grid {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 16px;
-          margin-bottom: 24px;
-        }
-
-        .stat-card {
-          background: rgba(255, 255, 255, 0.03);
-          border: 1px solid rgba(255, 255, 255, 0.05);
-          border-radius: 16px;
-          padding: 18px;
-          text-align: center;
-        }
-
-        .specialties {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 10px;
-        }
-
-        .specialty-tag {
-          background: rgba(212, 175, 55, 0.12);
-          border: 1px solid rgba(212, 175, 55, 0.25);
-          color: #d4af37;
-          padding: 8px 14px;
-          border-radius: 999px;
-          font-size: 12px;
-          font-weight: 500;
-        }
-
-        .cta-button {
-          width: 100%;
-          background: linear-gradient(135deg, #f6d365, #d4af37);
-          color: black;
-          border: none;
-          border-radius: 14px;
-          padding: 16px;
-          font-size: 15px;
-          font-weight: 700;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          box-shadow: 0 8px 24px rgba(212, 175, 55, 0.25);
-        }
-
-        .cta-button:hover {
-          transform: translateY(-2px);
-        }
-
-        @media (max-width: 768px) {
-          h1 {
-            font-size: 42px !important;
+        /* Tablet Styles (769px - 1023px) */
+        @media (min-width: 769px) and (max-width: 1023px) {
+          section:first-of-type {
+            padding: 60px 32px !important;
           }
 
-          .image-wrapper {
-            height: 300px;
+          section:last-of-type {
+            padding: 50px 32px 80px !important;
+          }
+
+          h1 {
+            font-size: 48px !important;
           }
 
           .trainer-grid {
-            grid-template-columns: 1fr;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 32px !important;
+          }
+        }
+
+        /* Desktop Styles (1024px+) */
+        @media (min-width: 1024px) {
+          section:first-of-type {
+            padding: clamp(60px, 8vw, 100px) 32px !important;
+          }
+
+          section:last-of-type {
+            padding: clamp(40px, 5vw, 60px) 32px clamp(60px, 8vw, 100px) !important;
+          }
+
+          h1 {
+            font-size: 56px !important;
+          }
+
+          .trainer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)) !important;
+            gap: 40px !important;
+          }
+
+          .trainer-card {
+            transform: scale(1);
+          }
+
+          .trainer-card:hover {
+            transform: translateY(-10px);
+          }
+        }
+
+        /* Small Mobile (< 320px) */
+        @media (max-width: 320px) {
+          h1 {
+            font-size: 24px !important;
+            letter-spacing: -0.5px;
+          }
+
+          p {
+            font-size: 12px !important;
+          }
+
+          section {
+            padding: 32px 12px !important;
           }
         }
       `}</style>
