@@ -254,13 +254,14 @@ export default function AboutPage() {
               }}
             >
               <Image
+                className="story-logo"
                 src="/logo.jpg"
                 alt="Gym Logo"
                 width={300}
                 height={300}
                 style={{
                   width: "100%",
-                  maxWidth: "250px",
+                  maxWidth: "300px",
                   height: "auto",
                   objectFit: "contain",
                 }}
@@ -657,6 +658,12 @@ export default function AboutPage() {
 
           .facility-card {
             height: 280px !important;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .story-logo {
+            max-width: 180px !important;
           }
         }
 
