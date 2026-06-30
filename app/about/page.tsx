@@ -244,15 +244,13 @@ export default function AboutPage() {
 
             <div
               style={{
-                height: "clamp(200px, 50vw, 400px)",
+                minHeight: "220px",
+                padding: "24px",
                 background: "linear-gradient(135deg, #D4AF37 0%, #1A1A1A 100%)",
                 borderRadius: "12px",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                fontSize: "18px",
-                color: "#000000",
-                fontWeight: 500,
               }}
             >
               <Image
@@ -262,8 +260,8 @@ export default function AboutPage() {
                 height={300}
                 style={{
                   width: "100%",
+                  maxWidth: "250px",
                   height: "auto",
-                  maxWidth: "300px",
                   objectFit: "contain",
                 }}
               />
@@ -445,8 +443,7 @@ export default function AboutPage() {
                     cursor: "pointer",
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor =
-                      "rgba(212,175,55,0.8)";
+                    e.currentTarget.style.borderColor = "rgba(212,175,55,0.8)";
                     e.currentTarget.style.transform = "scale(1.02)";
                     e.currentTarget.style.boxShadow =
                       "0 8px 20px rgba(212,175,55,0.15)";
@@ -538,8 +535,8 @@ export default function AboutPage() {
                 lineHeight: 1.6,
               }}
             >
-              Join our community and start your fitness journey today. Choose the
-              plan that works for you and get started with expert guidance.
+              Join our community and start your fitness journey today. Choose
+              the plan that works for you and get started with expert guidance.
             </p>
 
             <div
