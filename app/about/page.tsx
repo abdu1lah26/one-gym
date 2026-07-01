@@ -162,9 +162,9 @@ export default function AboutPage() {
           </h2>
 
           <div
+            className="story-grid"
             style={{
               display: "grid",
-              gridTemplateColumns: "1fr",
               gap: "24px",
               alignItems: "center",
               maxWidth: "1000px",
@@ -311,9 +311,9 @@ export default function AboutPage() {
             </p>
 
             <div
+              className="why-choose-grid"
               style={{
                 display: "grid",
-                gridTemplateColumns: "1fr",
                 gap: "16px",
               }}
             >
@@ -323,6 +323,9 @@ export default function AboutPage() {
                 return (
                   <div
                     key={index}
+                    className={`why-choose-card ${
+                      index === whyChooseOneGym.length - 1 ? "last-card" : ""
+                    }`}
                     style={{
                       background: "#1A1A1A",
                       border: "1px solid rgba(212,175,55,0.2)",
@@ -425,9 +428,9 @@ export default function AboutPage() {
             </h2>
 
             <div
+            className="facilities-grid"
               style={{
                 display: "grid",
-                gridTemplateColumns: "1fr",
                 gap: "16px",
               }}
             >
@@ -614,6 +617,35 @@ export default function AboutPage() {
       </div>
 
       <style jsx>{`
+      .why-choose-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 1024px) {
+  .why-choose-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .last-card {
+    grid-column: 2;
+  }
+}
+        .story-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 40px;
+          align-items: center;
+          max-width: 1000px;
+          margin: 0 auto;
+        }
+
+        @media (min-width: 1024px) {
+          .story-grid {
+            grid-template-columns: 1.3fr 1fr;
+          }
+        }
         @media (min-width: 481px) and (max-width: 768px) {
           /* Mobile Tablet Styles */
         }
@@ -630,16 +662,6 @@ export default function AboutPage() {
 
           p {
             font-size: 14px !important;
-          }
-
-          /* Story Grid */
-          .story-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-            max-width: 1000px;
-            margin: 0 auto;
           }
 
           /* Why Choose Grid */
@@ -675,16 +697,6 @@ export default function AboutPage() {
 
           h2 {
             font-size: 40px !important;
-          }
-
-          /* Story Grid */
-          .story-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-            max-width: 1000px;
-            margin: 0 auto;
           }
 
           /* Why Choose Grid */
