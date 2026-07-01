@@ -108,6 +108,7 @@ export default function TrainersPage() {
             }}
           >
             <div
+              className="trainer-grid"
               style={{
                 display: "grid",
                 gridTemplateColumns: "1fr",
